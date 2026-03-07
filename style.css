@@ -1,57 +1,60 @@
 body{
-    font-family: Arial;
-    margin:0;
-    background:#ffe6f2;
+margin:0;
+font-family:Arial;
+background:#f9e6ff;
 }
-
 .container{
-    width:1000px;
-    margin:auto;
+width:1200px;
+margin:auto;
+background:white;
+box-shadow:0 0 15px rgba(0,0,0,0.2);
 }
 .header{
-    height:150px;
-    background:#b57edc;
-    display:flex;
-    align-items:center;
-}
-.logo{
-    width:120px;
-    margin-left:20px;
+height:140px;
+background:#8a2be2;
+display:flex;
+align-items:center;
+padding-left:20px;
 }
 
 .logo img{
-    width:100%;
+width:90px;
 }
-.banner-text{
-    color:white;
-    font-size:32px;
-    margin-left:20px;
+.title{
+color:white;
+font-size:40px;
+margin-left:30px;
+font-weight:bold;
+}
+.main{
+display:flex;
 }
 .menu{
-    background:#d8a7ff;
-    padding:10px;
+width:220px;
+background:#e6ccff;
+padding-top:20px;
 }
-
 .menu a{
-    color:white;
-    text-decoration:none;
-    margin-right:20px;
-    font-weight:bold;
+display:block;
+padding:15px;
+color:#4b0082;
+text-decoration:none;
+font-weight:bold;
 }
-
 .menu a:hover{
-    color:#6a0dad;
+background:#d1a3ff;
 }
-
+.content{
+flex:1;
+padding:20px;
+}
 iframe{
-    width:100%;
-    height:400px;
-    border:none;
-    background:white;
+width:100%;
+height:600px;
+border:none;
 }
 .footer{
-    background:#e6ccff;
-    text-align:center;
-    padding:10px;
+background:#e6ccff;
+text-align:center;
+padding:10px;
 }
-
