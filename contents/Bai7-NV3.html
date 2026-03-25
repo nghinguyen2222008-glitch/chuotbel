@@ -1,0 +1,127 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hệ thống Đóng góp ý kiến</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Container chính cho Form */
+        .container {
+            width: 450px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            background: white;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Hộp thông báo cảm ơn (ẩn mặc định) */
+        .message-box {
+            display: none; /* Ẩn đi lúc đầu */
+            border: 1px solid #3498db;
+            padding: 30px;
+            max-width: 600px;
+            background: white;
+            animation: fadeIn 0.5s;
+        }
+
+        h2 { text-align: center; color: #333; }
+        h3 { color: #555; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+
+        /* Style form nhập liệu */
+        input[type="text"], input[type="email"], textarea {
+
+            width: 100%;
+            margin: 5px 0 15px 0;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea { height: 100px; }
+
+        .checkbox-group { margin-bottom: 15px; padding: 10px; background: #fff; }
+        .checkbox-item { display: flex; align-items: center; margin-bottom: 8px; cursor: pointer; }
+        .checkbox-item input { width: auto; margin: 0 10px 0 0; }
+       
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #f0f0f0;
+            border: 1px solid #999;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        button:hover { background-color: #e0e0e0; border-color: #333; }
+
+        p { color: #555; line-height: 1.6; }
+
+        /* Hiệu ứng xuất hiện mượt mà */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="formPage">
+
+        <h2>Đóng góp ý kiến cho thư viện của nhà trường</h2>
+
+        <form id="feedbackForm" onsubmit="handleFormSubmit(event)">
+
+            <h3>1. Thông tin về người góp ý</h3>
+            <label>Họ và tên:</label>
+            <input type="text" name="hoten" required placeholder="Nguyễn Văn A">
+
+
+            <label>Địa chỉ email:</label>
+            <input type="email" name="email" required placeholder="email@vi-du.com">
+
+
+            <h3>2. Đóng góp ý kiến</h3>
+           
+            <label><strong>Thể loại cần bổ sung thêm sách:</strong></label>
+            <div class="checkbox-group">
+                <label class="checkbox-item"><input type="checkbox" name="theloai" value="truyen-ngan"> Truyện ngắn</label>
+                <label class="checkbox-item"><input type="checkbox" name="theloai" value="ky-nang-song"> Kỹ năng sống</label>
+                <label class="checkbox-item"><input type="checkbox" name="theloai" value="cntt"> Công nghệ thông tin</label>
+                <label class="checkbox-item"><input type="checkbox" name="theloai" value="truyen-tranh"> Truyện tranh</label>
+                <label class="checkbox-item"><input type="checkbox" name="theloai" value="lich-su"> Lịch sử</label>
+            </div>
+
+            <label>Ý kiến đóng góp khác:</label>
+            <textarea name="ykien" placeholder="Nhập ý kiến của bạn..."></textarea>
+
+            <button type="submit">Góp ý</button>
+        </form>
+    </div>
+
+    <div class="message-box" id="thankYouPage">
+        <h2 style="text-align: left;">Cảm ơn bạn đã góp ý kiến</h2>
+        <p>Chúng tôi xin ghi nhận ý kiến của bạn và sẽ cải tiến, nâng cao chất lượng phục vụ hơn nữa trong thời gian sắp tới(có cc).</p>
+        <button onclick="window.location.reload()" style="width: auto; margin-top: 15px;">Quay lại</button>
+    </div>
+
+    <script>
+        function handleFormSubmit(event) {
+            // Ngăn chặn trang web tải lại theo cách mặc định
+            event.preventDefault();
+
+            // Ẩn trang Form
+            document.getElementById('formPage').style.display = 'none';
+
+            // Hiện trang Cảm ơn
+            document.getElementById('thankYouPage').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
